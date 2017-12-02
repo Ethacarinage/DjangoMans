@@ -5,7 +5,8 @@
 		{%if post.published_date %}
 				<p class="date">Published: {{ posts.published_date }}</p>
 		{% endif %}
-		<h2>{{posts}}</h2>
+		<a class="btn btn-default" href="{% url 'post_edit' pk=posts.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+		<h2>{{posts.tittle}}</h2>
 		<p>{{posts.text|linebreaksbr}}</p>
 	</div>
 {% endblock %}
