@@ -9,12 +9,13 @@
 		<h1>Battle Online Blog</h1>
 		<a href="http://Ethacarinage.pythonanywhere.com">Mi página...</a>
 	</div>
-
-	<div>
-		<p>Published: 02.12.2017, 11:59</p>
-		<h2><a href="">Mi primer Post</a></h2>
-		<p>Mi nombre es ... </p>
-	</div>
+	{%for post in posts%}
+		<div>
+			<p>Published: 02.12.2017, 11:59</p>
+			<h2><a href="">Mi primer Post</a></h2>
+			{{post}}
+		</div>
+	{%endfor%}
 
 	<div>
 		<p>Published: 02.12.2017, 11:59</p>
