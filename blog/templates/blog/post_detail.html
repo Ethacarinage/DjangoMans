@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	<div class="jumbotron">
+		{%if post.published_date %}
+				<p class="date">Published: {{ posts.published_date }}</p>
+		{% endif %}
+		<h2>{{posts}}</h2>
+		<p>{{posts.text|linebreaksbr}}</p>
+	</div>
+{% endblock %}

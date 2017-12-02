@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>BattleOnline</title>
-</head>
-<body>
-	<div class="" id="Inicio">
-		<h1>Battle Online Blog</h1>
-		<a href="http://Ethacarinage.pythonanywhere.com">Mi página...</a>
-	</div>
+{% extends 'blog/base.html' %}
+
+{% block content %}
 	{%for post in posts%}
-		<div>
-			<p>Published: 02.12.2017, 11:59</p>
-			<h2><a href="">Mi primer Post</a></h2>
-			{{post}}
+		<div class="col-6 col-sm-6 col-lg-4">
+			<p class="date">Published: {{ post.published_date }}</p>
+			<h2><a href="{% url 'post_detail' pk=post.pk %}">{{post}}</a></h2>
+			<p>{{post.text|linebreaksbr}}</p>
 		</div>
 	{%endfor%}
-	{{post}}
-	<div>
-		<p>Published: 02.12.2017, 11:59</p>
-		<h2><a href="">Mi segundo Post</a></h2>
-		<p>Mi nombre es ... </p>
-	</div>
-
-	<div id="Fin" class="">
-		<p>Jesus David Mena Rivera</p>
-		<p>Universidad Tecnologica de Pereira</p>
-		<p>DjangoMen</p>
-	</div>
-</body>
-</html>
+{% endblock %}
